@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    background: rgb(7,76,126);
+    background: radial-gradient(circle, rgba(7,76,126,1) 0%, rgba(3,4,3,1) 100%);
+}
+.widget-container Greeting{
+    background-color: rgba(53, 36, 36, 0);
+    width: 30%;
+    margin-left: 40px;
+    margin-top: 40px;
+    height: 600px;
+    position: relative;
+}
+.gslideembed{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+#datetime-widget span{
+    font-family: "Roboto";
+    color: azure;
+    font-weight: 300;
+    font-style: normal;
+    position: relative;
+}
+.widget-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr)); /* Adjust as needed */
+    gap: 10px; /* Adjust spacing between widgets */
+}
+
+
+/*-- Pomodro Timer */
+.clock-box {
+    background-color: #22262B;
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #22262B;
+    height: 450px;
+    width: 300px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+  }
+  .clock-display {
+    background-color: #cecece;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    border: none;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  .time-display {
+    position: relative;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 30px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  #filler {
+    background: #a33535;
+    height: 0px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+  }
+  /* --------------------------------------------------
+  ----------------------- Controls --------------------
+  ----------------------------------------------------*/
+  span {
+    height: 50px;
+    color: white;
+  }
+  #start:hover {
+    background-color: #6f797e;
+  }
+  #start {
+    float: left;
+    width: 150px;
+  }
+  #stop:hover {
+    background-color: #5d6d76;
+  }
+  #stop {
+    float: right;
+    width: 150px;
+  }
+  
+  .clock-controls {
+    position: absolute;
+    bottom: 50px;
+    height: 100px;
+    color: white;
+  }
+  
+  .controls-left {
+    float: left;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .controls-right {
+    float: right;
+    width: 150px;
+    text-align: center;
+  }
+  
+  p {
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #2c3e50;
+  }
+  
+  button {
+    font-size: 20px;
+    margin: 5px;
+    height: 25px;
+    width: 35px;
+    text-align: center;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #a33535;
+  }
+  
+  .start-reset {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    line-height: 50px;
+    background-color: #818181;
+  }
+  
+  .time-adjust {
+    color: white;
+  }
+  
+  #minutes {
+    color: black;
+  }
+  
+  #colon {
+    color: black;
+  }
+  
+  #seconds {
+    color: black;
+  }
+  /*-- End*/

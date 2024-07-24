@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Up and coming concerts!</title>
+    <link rel="stylesheet" href="./css/style.css">
+      <!-- Demo CSS (No need to include it into your project) -->
+      <link rel="stylesheet" href="./css/demo.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+</head>
+<body>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000" 
+    frameborder="0" width="460" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>"
+    <div class="clock-box">
+
+        <div class="clock-display">
+          <div class="time-display">
+            <span id="minutes">00</span>
+            <span id="colon">:</span>
+            <span id="seconds">00</span>
+          </div>
+          <div id="filler"></div>
+        </div>
+    
+        <div class="clock-controls">
+          <div class="controls-left">
+    
+            <p>Session</p>
+            <p id="session-time">25 min</p>
+            <button id="sesh-minus" class="time-adjust">-</button>
+            <button id="sesh-plus" class="time-adjust">+</button>
+          </div>
+    
+          <div class="controls-right">
+            <p>Break</p>
+            <p id="break-time">5 min</p>
+            <button id="break-minus" class="time-adjust">-</button>
+            <button id="break-plus" class="time-adjust">+</button>
+          </div>
+    
+        </div>
+    
+        <div class="start-reset">
+          <span id="start">Start</span>
+          <span id="stop">Stop</span>
+        </div>
+      </div>
+</body>
+<script src="./js/script.js"></script>
+</html>
+
