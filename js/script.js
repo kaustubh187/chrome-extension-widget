@@ -163,4 +163,100 @@ var pomodoroClock = {
   }
   updateTime();
   setInterval(updateTime, 1000);
+
+
+  // Sample data - this would typically come from a database or API
+const quotes = [
+  {
+      title: "To Kill a Mockingbird",
+      quote: "Until I feared I would lose it, I never loved to read. One does not love breathing.",
+      reader: "Harper Lee"
+  },
+  {
+      title: "1984",
+      quote: "Big Brother is Watching You.",
+      reader: "George Orwell"
+  },
+  {
+      title: "Pride and Prejudice",
+      quote: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      reader: "Jane Austen"
+  }
+  // Add more quotes as needed
+];
+
+function updateBookQuoteWidget() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const selectedQuote = quotes[randomIndex];
+
+  document.getElementById('book-title').innerText = "Title: " + selectedQuote.title;
+  document.getElementById('book-quote').innerText = selectedQuote.quote;
+  document.getElementById('reader-info').innerText = "Read by: " + selectedQuote.reader;
+}
+
+// Update the quote every 5 seconds
+setInterval(updateBookQuoteWidget, 5000);
+
+// Initial call to display the first quote
+updateBookQuoteWidget();
+
+// Sample data - could be loaded from a server or local storage
+let tasks = [
+  { task: "Read 20 pages of a book", completed: false },
+  { task: "Exercise for 30 minutes", completed: false }
+];
+
+function renderTasks() {
+  const list = document.getElementById('dgc-list');
+  list.innerHTML = ''; // Clear the list
+  tasks.forEach((task, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+          <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${index})">
+          <span style="${task.completed ? 'text-decoration: line-through;' : ''}">${task.task}</span>
+          <button onclick="removeTask(${index})">Remove</button>
+      `;
+      list.appendChild(li);
+  });
+}
+
+function addTask() {
+  const newTaskInput = document.getElementById('new-task-input');
+  const taskText = newTaskInput.value.trim();
+  if (taskText) {
+      tasks.push({ task: taskText, completed: false });
+      newTaskInput.value = '';
+      renderTasks();
+  }
+}
+
+function toggleTask(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderTasks();
+}
+
+function removeTask(index) {
+  tasks.splice(index, 1);
+  renderTasks();
+}
+
+// Initial render
+renderTasks();
+
+
+function updateAnnouncements() {
+  // This could be replaced with a fetch call to get dynamic content
+  const announcements = [
+      "Welcome to the Daily Growth Checklist!\n",
+      "Check out our new features!\n",
+      "Stay updated with the latest announcements.\n"
+  ];
+
+  const scrollingText = document.getElementById('scrolling-text');
+  scrollingText.innerText = announcements.join(" \u2022 "); // Use bullet points to separate messages
+}
+
+// Call the function to update the announcements on page load
+updateAnnouncements();
+
   

@@ -3,50 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Up and coming concerts!</title>
-    <link rel="stylesheet" href="./css/style.css">
-      <!-- Demo CSS (No need to include it into your project) -->
-      <link rel="stylesheet" href="./css/demo.css">
-      <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <title>Enhanced Dashboard</title>
+    <link rel="stylesheet" href="./css/stylo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000" 
-    frameborder="0" width="460" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>"
-    <div class="clock-box">
-
-        <div class="clock-display">
-          <div class="time-display">
-            <span id="minutes">00</span>
-            <span id="colon">:</span>
-            <span id="seconds">00</span>
-          </div>
-          <div id="filler"></div>
-        </div>
-    
-        <div class="clock-controls">
-          <div class="controls-left">
-    
-            <p>Session</p>
-            <p id="session-time">25 min</p>
-            <button id="sesh-minus" class="time-adjust">-</button>
-            <button id="sesh-plus" class="time-adjust">+</button>
-          </div>
-    
-          <div class="controls-right">
-            <p>Break</p>
-            <p id="break-time">5 min</p>
-            <button id="break-minus" class="time-adjust">-</button>
-            <button id="break-plus" class="time-adjust">+</button>
-          </div>
-    
-        </div>
-    
-        <div class="start-reset">
-          <span id="start">Start</span>
-          <span id="stop">Stop</span>
-        </div>
-      </div>
+    <main>
+        <aside class="sidebar">
+            <div class="widget">
+                <h2>Current Time</h2>
+                <div id="datetime-widget" class="widget-content">
+                    <span id="time" class="time-display"></span>
+                        <span id="date-info" class="date-display"></span>
+                    
+                </div>
+                <div class="overlay">
+                    <span id="time" class="time-display"></span>
+                    <span id="date-info" class="date-display"></span>
+                </div>
+            </div>
+            <div class="widget">
+                <h2>Today's Schedule</h2>
+                <div class="widget-content">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata"></iframe>
+                </div>
+            </div>
+            <div class="widget">
+                <h2>Join a Meeting</h2>
+                <div class="widget-content">
+                    <p><a href="https://meet.google.com/your-meet-link" target="_blank" class="button">Click here to join</a></p>
+                </div>
+            </div>
+            <div class="widget">
+                <h2>Google Keep Notes</h2>
+                <div class="widget-content">
+                    <p><a href="https://keep.google.com/" target="_blank" class="button">Open Google Keep</a></p>
+                </div>
+            </div>
+        </aside>
+        <section class="content">
+            <div class="left-content">
+                <div class="activities">
+                    <h1>Dashboard</h1>
+                    <div class="activity-container">
+                        <div class="img-five">
+                            <div class="image-container">
+                                <h3><i class="fas fa-music"></i> Spotify Music Player</h3>
+                                <iframe src="https://open.spotify.com/embed/playlist/6dSz0AWxkgBfhlNBFyzqFf"></iframe>
+                            </div>
+                        </div>
+                        <div class="img-six">
+                            <div class="image-container">
+                                <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+                                <div class="scrolling-container">
+                                    <div class="scrolling-text" id="scrolling-text">
+                                        <div class="announcement">Welcome to the Daily Growth Checklist! Check out our new features and stay updated with the latest announcements.</div>
+                                        <div class="announcement">New features released! Check out the updated dashboard for enhanced analytics.</div>
+                                        <div class="announcement">Reminder: Scheduled maintenance on Saturday from 1 AM to 3 AM. Please save your work.</div>
+                                        <div class="announcement">Our mobile app now supports dark mode. Update to the latest version to try it out!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-bottom">
+                    <div class="weekly-schedule">
+                        <h1>Daily Growth Checklist</h1>
+                        <ul id="dgc-list">
+                            <!-- Checklist items will be dynamically inserted here -->
+                        </ul>
+                        <input type="text" id="new-task-input" placeholder="Add a new task">
+                        <button class="button" onclick="addTask()">Add Task</button>
+                    </div>
+                    <div class="personal-bests">
+                        <h1>Book + Quote</h1>
+                        <div class="book-info">
+                            <h4 id="book-title">Title: </h4>
+                            <p id="book-quote"></p>
+                            <p id="reader-info">Read by: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="user-info">
+                    <!-- User Info -->
+                    
+                </div>
+                <div class="active-calories">
+                    <h1>Google Slides</h1>
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
+                </div>
+                <div class="friends-activity">
+                    <h1>Timer</h1>
+                    <div class="clock-box">
+                        <div class="clock-display">
+                            <div class="time-display">
+                                <span id="minutes">00</span>
+                                <span id="colon">:</span>
+                                <span id="seconds">00</span>
+                            </div>
+                            <div id="filler"></div>
+                        </div>
+                        <div class="clock-controls">
+                            <div class="controls-left">
+                                <p>Session</p>
+                                <p id="session-time">25 min</p>
+                                <button id="sesh-minus" class="time-adjust">-</button>
+                                <button id="sesh-plus" class="time-adjust">+</button>
+                            </div>
+                            <div class="controls-right">
+                                <p>Break</p>
+                                <p id="break-time">5 min</p>
+                                <button id="break-minus" class="time-adjust">-</button>
+                                <button id="break-plus" class="time-adjust">+</button>
+                            </div>
+                        </div>
+                        <div class="start-reset">
+                            <button class="button" id="start">Start</button>
+                            <button class="button" id="stop">Stop</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-personal-bests">
+                    <h1>Poll</h1>
+                    <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14105173.js"></script>
+                    <noscript><a href="https://poll.fm/14105173">Movie Night on Friday?</a></noscript>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
 </body>
-<script src="./js/script.js"></script>
 </html>
-
