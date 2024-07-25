@@ -25,14 +25,14 @@ main {
   grid-template-columns: 20% 80%;
   width: 95%;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.748);
+  background: rgba(255, 255, 255, 0.614);
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 .sidebar {
-  background: #343a40;
+  background: #343a40db;
   color: #fff;
   padding: 20px;
 }
@@ -81,7 +81,6 @@ main {
   flex-direction: column;
   gap: 20px;
 }
-
 .activities,
 .weekly-schedule,
 .personal-bests,
@@ -89,12 +88,13 @@ main {
 .friends-activity,
 .mobile-personal-bests {
   background: #f6f7fb;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 .active-calories{
-  background: #f6f7fb;
+  background: #f6f7fbe7;
   border-radius: 10px;
   height: 430px;
   margin-bottom: 60px;
@@ -108,7 +108,7 @@ main {
 .friends-activity h1,
 .mobile-personal-bests h1 {
   margin-bottom: 15px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .activity-container {
@@ -245,15 +245,17 @@ iframe {
 
 .start-reset button {
   padding: 10px 20px;
-  background: #5a67d8;
+  font-size: 1.2em;
+  background: #343b75;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
+  animation-delay: 3ms;
 }
 
 .start-reset button:hover {
-  background: #4c51bf;
+  background: #f3f3f4;
 }
 /* General Styling */
 .section-title {
@@ -339,7 +341,7 @@ iframe {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: ease-in-out 0.3s;
 }
 
 .time-adjust:hover {
@@ -355,7 +357,12 @@ iframe {
 
 .start-reset .button {
     padding: 10px 20px;
-    background: #28a745;
+    font-size: 2em;
+    background: #19f14c;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #0c0000;
+    transition: ease-in-out 0.2s;
 }
 
 .start-reset .button#stop {
@@ -363,11 +370,14 @@ iframe {
 }
 
 .start-reset .button:hover {
-    background: #218838;
+    background: #122c18;
+    color: whitesmoke;
+    letter-spacing: 3px;
 }
 
 .start-reset .button#stop:hover {
-    background: #c82333;
+    background: #310005;
+    letter-spacing: 3px;
 }
 
 /* Book + Quote */
@@ -440,8 +450,11 @@ iframe {
     grid-template-columns: 1fr;
   }
 
-  .left-content,
   .right-content {
     flex-direction: column;
   }
+  .left-content{
+    flex-direction: column;
+  }
+  
 }
