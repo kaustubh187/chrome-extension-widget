@@ -7,96 +7,97 @@
     <link rel="stylesheet" href="./css/stylo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
 </head>
 <body>
     <main>
         <aside class="sidebar">
-            <div class="widget">
+            <div class="widget" id="datetime-widget">
+                <button class="toggle-button" onclick="toggleWidget('datetime-widget')"><i class="fas fa-times"></i></button>
                 <h2>Welcome</h2>
-                <div id="datetime-widget" class="widget-content">
-                    <span id="time" class="time-display"></span>
-                        <span id="date-info" class="date-display"></span>
-                    
-                </div>
-                <div class="overlay">
+                <div class="widget-content">
                     <span id="time" class="time-display"></span>
                     <span id="date-info" class="date-display"></span>
                 </div>
             </div>
-            <div class="widget">
-            <div class="pomodoro-container">
+            <div class="widget" id="pomodoro-widget">
+                <button class="toggle-button" onclick="toggleWidget('pomodoro-widget')"><i class="fas fa-times"></i></button>
                 <h1>Pomodoro Timer</h1>
-                <div class="clock-box">
-                    <div class="clock-display">
-                        <div id="filler"></div>
-                        <div class="time-disp">
-                            <span id="minutes">00</span><span id="colon">:</span><span id="seconds">00</span>
+                <div class="pomodoro-container">
+                    <div class="clock-box">
+                        <div class="clock-display">
+                            <div id="filler"></div>
+                            <div class="time-disp">
+                                <span id="minutes">00</span><span id="colon">:</span><span id="seconds">00</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="clock-controls">
-                        <div class="controls-left">
-                            <p>Session</p>
-                            <p id="session-time">25 min</p>
-                            <button id="sesh-minus" class="time-adjust">-</button>
-                            <button id="sesh-plus" class="time-adjust">+</button>
+                        <div class="clock-controls">
+                            <div class="controls-left">
+                                <p>Session</p>
+                                <p id="session-time">25 min</p>
+                                <button id="sesh-minus" class="time-adjust">-</button>
+                                <button id="sesh-plus" class="time-adjust">+</button>
+                            </div>
+                            <div class="controls-right">
+                                <p>Break</p>
+                                <p id="break-time">5 min</p>
+                                <button id="break-minus" class="time-adjust">-</button>
+                                <button id="break-plus" class="time-adjust">+</button>
+                            </div>
                         </div>
-                        <div class="controls-right">
-                            <p>Break</p>
-                            <p id="break-time">5 min</p>
-                            <button id="break-minus" class="time-adjust">-</button>
-                            <button id="break-plus" class="time-adjust">+</button>
+                        <div class="start-reset">
+                            <button class="button" id="start">Start</button>
+                            <button class="button" id="stop">Stop</button>
                         </div>
-                    </div>
-                    <div class="start-reset">
-                        <button class="button" id="start">Start</button>
-                        <button class="button" id="stop">Stop</button>
                     </div>
                 </div>
             </div>
-        </div>
-            <div class="widget">
+            <div class="widget" id="schedule-widget">
+                <button class="toggle-button" onclick="toggleWidget('schedule-widget')"><i class="fas fa-times"></i></button>
                 <h2>Today's Schedule</h2>
                 <div class="widget-content" style="height: 400px; overflow: hidden;">
                     <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata" width="800" height="800"></iframe>
                 </div>
             </div>
-            <div class="widget">
+            <div class="widget" id="meeting-widget">
+                <button class="toggle-button" onclick="toggleWidget('meeting-widget')"><i class="fas fa-times"></i></button>
                 <h2>Join a Meeting</h2>
                 <div class="widget-content">
                     <div class="meeting-option">
                         <p><a href="https://meet.google.com/your-meet-link" target="_blank" class="button">Open Scheduled Meet</a></p>
                     </div>
-                    <span style="align-items: center;">OR
-                    </span>
+                    <span style="align-items: center;">OR</span>
                     <div class="meeting-code">
                         <input type="text" id="gmeet-code" placeholder="Enter Meet Code" />
                         <button class="button" onclick="joinMeet()">Join</button>
                     </div>
                 </div>
             </div>
-            
-            <div class="widget">
+            <div class="widget" id="google-keep-widget">
+                <button class="toggle-button" onclick="toggleWidget('google-keep-widget')"><i class="fas fa-times"></i></button>
                 <h2>Google Keep Notes</h2>
                 <div class="widget-content">
                     <p><a href="https://keep.google.com/" target="_blank" class="button">Open Google Keep</a></p>
                 </div>
             </div>
-            <div class="widget">
-            <div class="poll">
-                POLL
-                <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14105173.js"></script>
-                <noscript><a href="https://poll.fm/14105173">Movie Night on Friday?</a></noscript>
-              </div>
+            <div class="widget" id="poll-widget">
+                <button class="toggle-button" onclick="toggleWidget('poll-widget')"><i class="fas fa-times"></i></button>
+                <h2>Poll</h2>
+                <div class="poll">
+                    <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14105173.js"></script>
+                    <noscript><a href="https://poll.fm/14105173">Movie Night on Friday?</a></noscript>
+                </div>
             </div>
         </aside>
         <section class="content">
             <div class="left-content">
-                <div class="activities" style="background-color: rgba(207, 212, 217, 0.821)">
+                <div class="activities" id="activities" style="background-color: rgba(207, 212, 217, 0.821)">
+                    <button class="toggle-button" onclick="toggleWidget('activities')"><i class="fas fa-times"></i></button>
                     <h1 style="font-size: 3em;color: rgb(252, 116, 101);text-align: center;">Music Player</h1>
                     <div class="activity-container" style="height: 520px;">
                         <div class="img-five" style="width: 100%; height: 360px;">
                             <div class="image-container" style="height: 100%;">
-                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTqYqGLu7kTX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>    
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTqYqGLu7kTX?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>    
                             </div>
                         </div>
                         <div class="img-six" style="height: 150px;">
@@ -104,7 +105,7 @@
                                 <h3 style="color: rgb(253, 35, 89); font-family: 'Montserrat';font-size: 2em;text-align: center;"><i class="fas fa-bullhorn"></i> Announcements</h3>
                                 <div class="scrolling-container">
                                     <div class="scrolling-text" id="scrolling-text">
-                                        
+                                        <!-- Announcements will be dynamically added here -->
                                     </div>
                                 </div>
                             </div>
@@ -112,15 +113,17 @@
                     </div>
                 </div>
                 <div class="left-bottom">
-                    <div class="weekly-schedule">
+                    <div class="weekly-schedule" id="weekly-schedule">
+                        <button class="toggle-button" onclick="toggleWidget('weekly-schedule')"><i class="fas fa-times"></i></button>
                         <h1 style="color: rgb(142, 7, 128); font-family: 'Montserrat';font-size: 2em;text-align: center;">Daily Growth Checklist</h1>
                         <ul id="dgc-list">
-                            
+                            <!-- Checklist items will be dynamically added here -->
                         </ul>
                         <input type="text" id="new-task-input" placeholder="Add a new task">
                         <button class="button" onclick="addTask()" style="font-family: 'Montserrat';font-size: 0.8em;text-align: center;">Add Task</button>
                     </div>
-                    <div class="personal-bests" style="margin-top: 20px;">
+                    <div class="personal-bests" id="personal-bests" style="margin-top: 20px;">
+                        <button class="toggle-button" onclick="toggleWidget('personal-bests')"><i class="fas fa-times"></i></button>
                         <h1 style="font-size: 2.2em;color:darkslategrey;text-align: center;">Words of Wisdom</h1>
                         <div class="book-info">
                             <h4 id="book-title">Book: </h4>
@@ -128,52 +131,47 @@
                             <p id="reader-info">Read by: </p>
                         </div>
                     </div>
-                    <div class="active-calories">
+                    <div class="active-calories" id="active-calories">
+                        <button class="toggle-button" onclick="toggleWidget('active-calories')"><i class="fas fa-times"></i></button>
                         <h1 style="font-size: 2.2em;color: darkcyan;text-align: center;">Excel Sheet</h1>
                         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLTtid0c3x-EyJCXaugtsKdEhk5clapI01-VuFFzHJjl-8lT0jEg0wuh9PzrKkE4tTcYYKBjfQPoJ2/pubhtml?widget=true&amp;headers=false"></iframe>
                     </div>
                 </div>
-               
             </div>
             <div class="right-content">
-                <div class="user-info">
-                   
-                    
+                <div class="user-info" id="user-info">
+                    <button class="toggle-button" onclick="toggleWidget('user-info')"><i class="fas fa-times"></i></button>
                     <div class="active-calories">
                         <h1 style="font-size: 2.5em;text-align: center;color:saddlebrown;">Google Slides</h1>
                         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
                     </div>
-                    
-                    
                 </div>
-                <div class="user-info">
-                <div class="widget">
+                <div class="user-info" id="opportunity-widget">
+                    <button class="toggle-button" onclick="toggleWidget('opportunity-widget')"><i class="fas fa-times"></i></button>
                     <h1 style="font-size: 2em;color: rgb(5, 128, 181);text-align: center;">Opportunity Board</h1>
                     <div class="widget-content">
                         <div class="opportunity-form">
                             <textarea id="opportunity-description" placeholder="Describe the opportunity or problem..."></textarea>
                             <button class="button" onclick="submitOpportunity()">Submit</button>
                         </div>
-                        
                         <div class="opportunity-list">
                             <h3 style="text-align: center;">Current Opportunities</h3>
                             <ul id="opportunity-board">
+                                <!-- Opportunities will be dynamically added here -->
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-                
-            
-                
-                <div class="mobile-personal-bests">
+                <div class="mobile-personal-bests" id="mobile-personal-bests">
+                    <button class="toggle-button" onclick="toggleWidget('mobile-personal-bests')"><i class="fas fa-times"></i></button>
                     <h1 style="font-size: 2.2em;color:darkslateblue;text-align: center;">Google Form</h1>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem99nt2AQ1catikaVi_ugMjs3PUFuKxfAw73YznXtK1Cr_TQ/viewform?embedded=true" width="640" height="719" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
-                
             </div>
         </section>
+        <button class="show-all-button" onclick="showAllWidgets()">Show All Widgets</button>
     </main>
     <script src="./js/script.js"></script>
+    
 </body>
 </html>

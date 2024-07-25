@@ -280,4 +280,26 @@ function submitOpportunity() {
 // Initial render
 renderOpportunityBoard();
 
+function toggleWidget(widgetId) {
+  var widget = document.getElementById(widgetId);
+  var content = widget.querySelector('.widget-content, .pomodoro-container, .activity-container, .weekly-schedule, .personal-bests, .active-calories, .user-info, .mobile-personal-bests');
+  if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      widget.querySelector('.toggle-button').innerHTML = '<i class="fas fa-times"></i>';
+  } else {
+      content.classList.add('hidden');
+      widget.querySelector('.toggle-button').innerHTML = '<i class="fas fa-angle-down"></i>';
+  }
+}
+
+function showAllWidgets() {
+  var widgets = document.querySelectorAll('.widget, .activities, .left-bottom, .user-info, .mobile-personal-bests');
+  widgets.forEach(function(widget) {
+      var content = widget.querySelector('.widget-content, .pomodoro-container, .activity-container, .weekly-schedule, .personal-bests, .active-calories, .user-info, .mobile-personal-bests');
+      if (content.classList.contains('hidden')) {
+          content.classList.remove('hidden');
+          widget.querySelector('.toggle-button').innerHTML = '<i class="fas fa-times"></i>';
+      }
+  });
+}
   

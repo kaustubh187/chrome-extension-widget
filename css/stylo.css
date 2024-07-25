@@ -30,6 +30,41 @@ main {
   transition: all 0.3s ease; 
 }
 
+.widget {
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.171);
+  border-radius: 20px;
+  padding: 20px;
+  
+}
+
+.widget .toggle-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fa0f0f98;
+}
+
+.show-all-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   main {
     grid-template-columns: 1fr 2fr;
