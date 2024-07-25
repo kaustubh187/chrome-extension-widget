@@ -27,7 +27,7 @@ main {
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: all 0.3s ease; /* Smooth transition for layout changes */
+  transition: all 0.3s ease; 
 }
 
 @media (max-width: 1200px) {
@@ -161,20 +161,20 @@ iframe {
   animation: scroll 20s linear infinite;
 }
 .announcement {
-  font-size: 20px; /* Set font size */
+  font-size: 20px; 
   font-family: "Montserrat", sans-serif;
-  color: #0c0000; /* Set text color */
-  margin: 4px 0; /* Add margin between announcements */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  color: #0c0000; 
+  margin: 4px 0; 
+  border-radius: 5px; 
   padding-left: 20px;
 }
 .scrolling-text .announcement::before {
-  content: "\2022"; /* Unicode for bullet point */
+  content: "\2022"; 
   position: absolute;
   left: 5px;
-  color: #060505; /* Color for the bullet point */
-  font-size: 20px; /* Size for the bullet point */
-  line-height: 1; /* Ensure it aligns properly */
+  color: #060505; 
+  font-size: 20px; 
+  line-height: 1; 
 }
 @keyframes scroll {
   0% {
@@ -184,7 +184,6 @@ iframe {
     transform: translateY(-100%);
   }
 }
-/* Style for the list items */
 #dgc-list li {
   display: flex;
   align-items: center;
@@ -195,12 +194,10 @@ iframe {
   border-radius: 9px;
 }
 
-/* Style for the checkbox */
 #dgc-list li input[type="checkbox"] {
   margin-right: 10px;
 }
 
-/* Style for the task text */
 #dgc-list li span {
   flex-grow: 1;
   font-size: 18px;
@@ -208,7 +205,6 @@ iframe {
   color: #181914;
 }
 
-/* Style for the remove button */
 #dgc-list li button {
   background-color: #ff4d4d;
   font-family: "Montserrat", sans-serif;
@@ -220,7 +216,6 @@ iframe {
   cursor: pointer;
 }
 
-/* Style for completed tasks */
 #dgc-list li span.completed {
   text-decoration: line-through;
   color: #888;
@@ -276,7 +271,6 @@ iframe {
 .start-reset button:hover {
   background: #f3f3f4;
 }
-/* General Styling */
 .section-title {
     font-size: 1.6rem;
     margin-bottom: 15px;
@@ -284,7 +278,6 @@ iframe {
     text-align: center;
 }
 
-/* Daily Growth Checklist */
 .weekly-schedule {
     background-color: #f8f9fa;
     padding: 20px;
@@ -338,7 +331,6 @@ iframe {
     background-color: #0056b3;
 }
 
-/* Timer */
 .clock-box {
     background: #f8f9fa;
     padding: 20px;
@@ -399,7 +391,6 @@ iframe {
     letter-spacing: 3px;
 }
 
-/* Book + Quote */
 .book-info {
     background-color: #f8f9fa;
     padding: 20px;
@@ -420,7 +411,6 @@ iframe {
     margin: 5px 0;
 }
 
-/* Poll */
 .mobile-personal-bests {
     background-color: #f8f9fa;
     padding: 2px;
@@ -537,8 +527,8 @@ iframe {
 
 .poll h2 {
   font-size: 1.5em; 
-  color: #333; /* Darker color for emphasis */
-  margin-bottom: 10px; /* Space below the title */
+  color: #333; 
+  margin-bottom: 10px; 
 }
 
 
@@ -566,9 +556,8 @@ iframe {
 }
 
 .clock-box {
-  background: #00000057;
+  background: #00000000;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 300px;
   margin: auto;
@@ -585,14 +574,14 @@ iframe {
 }
 
 #filler {
-  background-color: #4caf50; /* Green for session */
+  background-color: #4caf50;
   height: 100%;
   width: 0;
   transition: width 1s;
 }
 
 .break-active #filler {
-  background-color: #ff9800; /* Orange for break */
+  background-color: #ff9800; 
 }
 
 .time-disp {
