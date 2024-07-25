@@ -14,42 +14,27 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0') no-repeat center center fixed;
+  background-image: url('https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0');
+  background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
 }
 
 main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 20% 80%;
   width: 95%;
   margin: 20px auto;
   background: rgba(255, 255, 255, 0.614);
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+<<<<<<< HEAD
+=======
   transition: all 0.3s ease; 
+>>>>>>> bd4ee87453fd2a6208ecee95d86d1e0294699fdb
 }
 
-@media (max-width: 1200px) {
-  main {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-
-  .content {
-    grid-template-columns: 1fr;
-  }
-
-  .left-content,
-  .right-content {
-    flex-direction: column;
-  }
-}
 .sidebar {
   background: #343a40db;
   color: #fff;
@@ -589,9 +574,10 @@ iframe {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.3em;
+  font-size: 2em;
   color: black;
-  }
+  
+}
 
 .clock-controls {
   display: flex;
