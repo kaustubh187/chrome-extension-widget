@@ -91,8 +91,8 @@
         </aside>
         <section class="content">
             <div class="left-content">
-                <div class="activities">
-                    <h1 style="font-size: 3em;color: salmon;">Dashboard</h1>
+                <div class="activities" style="background-color: rgba(207, 212, 217, 0.821)">
+                    <h1 style="font-size: 3em;color: rgb(252, 116, 101);text-align: center;">Music Player</h1>
                     <div class="activity-container" style="height: 520px;">
                         <div class="img-five" style="width: 100%; height: 360px;">
                             <div class="image-container" style="height: 100%;">
@@ -101,7 +101,7 @@
                         </div>
                         <div class="img-six" style="height: 150px;">
                             <div class="image-container" style="height: 100%;">
-                                <h3 style="color: rgb(253, 35, 89); font-family: 'Montserrat';font-size: 2em;"><i class="fas fa-bullhorn"></i> Announcements</h3>
+                                <h3 style="color: rgb(253, 35, 89); font-family: 'Montserrat';font-size: 2em;text-align: center;"><i class="fas fa-bullhorn"></i> Announcements</h3>
                                 <div class="scrolling-container">
                                     <div class="scrolling-text" id="scrolling-text">
                                         
@@ -113,15 +113,15 @@
                 </div>
                 <div class="left-bottom">
                     <div class="weekly-schedule">
-                        <h1>Daily Growth Checklist</h1>
+                        <h1 style="color: rgb(142, 7, 128); font-family: 'Montserrat';font-size: 2em;text-align: center;">Daily Growth Checklist</h1>
                         <ul id="dgc-list">
-                            <!-- Checklist items will be dynamically inserted here -->
+                            
                         </ul>
                         <input type="text" id="new-task-input" placeholder="Add a new task">
-                        <button class="button" onclick="addTask()">Add Task</button>
+                        <button class="button" onclick="addTask()" style="font-family: 'Montserrat';font-size: 0.8em;text-align: center;">Add Task</button>
                     </div>
-                    <div class="personal-bests">
-                        <h1>Words of Wisdom</h1>
+                    <div class="personal-bests" style="margin-top: 20px;">
+                        <h1 style="font-size: 2.2em;color:darkslategrey;text-align: center;">Words of Wisdom</h1>
                         <div class="book-info">
                             <h4 id="book-title">Book: </h4>
                             <p id="book-quote"></p>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="active-calories">
-                        <h1>Excel Sheet</h1>
+                        <h1 style="font-size: 2.2em;color: darkcyan;text-align: center;">Excel Sheet</h1>
                         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLTtid0c3x-EyJCXaugtsKdEhk5clapI01-VuFFzHJjl-8lT0jEg0wuh9PzrKkE4tTcYYKBjfQPoJ2/pubhtml?widget=true&amp;headers=false"></iframe>
                     </div>
                 </div>
@@ -137,25 +137,27 @@
             </div>
             <div class="right-content">
                 <div class="user-info">
+                   
                     
                     <div class="active-calories">
-                        <h1 style="font-size: 2.5em;margin-left: 13px;color:saddlebrown;">Google Slides</h1>
+                        <h1 style="font-size: 2.5em;text-align: center;color:saddlebrown;">Google Slides</h1>
                         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
                     </div>
+                    
                     
                 </div>
                 <div class="user-info">
                 <div class="widget">
-                    <h1 style="font-size: 2em;color: rgb(36, 29, 252);">Opportunity Board</h1>
+                    <h1 style="font-size: 2em;color: rgb(5, 128, 181);text-align: center;">Opportunity Board</h1>
                     <div class="widget-content">
                         <div class="opportunity-form">
                             <textarea id="opportunity-description" placeholder="Describe the opportunity or problem..."></textarea>
                             <button class="button" onclick="submitOpportunity()">Submit</button>
                         </div>
+                        
                         <div class="opportunity-list">
-                            <h3>Current Opportunities</h3>
+                            <h3 style="text-align: center;">Current Opportunities</h3>
                             <ul id="opportunity-board">
-                                <!-- Opportunities will be dynamically inserted here -->
                             </ul>
                         </div>
                     </div>
@@ -165,7 +167,7 @@
             
                 
                 <div class="mobile-personal-bests">
-                    <h1>Google Form</h1>
+                    <h1 style="font-size: 2.2em;color:darkslateblue;text-align: center;">Google Form</h1>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem99nt2AQ1catikaVi_ugMjs3PUFuKxfAw73YznXtK1Cr_TQ/viewform?embedded=true" width="640" height="719" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
                 

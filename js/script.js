@@ -214,9 +214,13 @@ renderTasks();
 
 function updateAnnouncements() {
   const announcements = [
-      "Welcome to the Daily Growth Checklist!",
-      "Check out our new features!",
-      "Stay updated with the latest announcements."
+    "New product launch on the horizon!",
+    "Customer experience enhancement project underway.",
+    "Data-driven decision making is our focus.",
+    "Talent acquisition strategy review in progress.",
+    "Committed to sustainability goals.",
+    "Embarking on a digital transformation journey.",
+    "Expanding employee well-being programs."
   ];
 
   const scrollingText = document.getElementById('scrolling-text');
