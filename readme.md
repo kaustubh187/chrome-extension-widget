@@ -6,9 +6,10 @@ This project is a comprehensive dashboard that integrates various widgets to hel
 
 ## Features
 
-![image](https://github.com/user-attachments/assets/947e43f6-4a9c-4799-876a-7aa815494a0b)
+![image](https://github.com/user-attachments/assets/006a25ba-2379-4856-a475-224b89a695f7)
 
-![image](https://github.com/user-attachments/assets/5b321c22-9976-4f98-87fa-fffb68986b45)
+![image](https://github.com/user-attachments/assets/d1a9ac48-362b-474a-b8d3-a6ed37fd7b70)
+
 
 
 - **Welcome Widget**: Displays a welcome message along with the current date and time.
