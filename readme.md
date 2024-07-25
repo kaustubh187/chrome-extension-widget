@@ -32,7 +32,7 @@ This project is a comprehensive dashboard that integrates various widgets to hel
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/dashboard-project.git
+   git clone https://github.com/kaustubh187/chrome-extension-widget.git
    cd dashboard-project
 
 
