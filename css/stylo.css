@@ -115,7 +115,7 @@ main {
 .active-calories{
   background: #f6f7fbe7;
   border-radius: 10px;
-  height: 430px;
+  height: 373px;
   margin-bottom: 60px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -521,7 +521,7 @@ iframe {
   max-width: 400px; 
   margin: 20px auto; 
   text-align: center; 
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Montserrat', sans-serif; 
 }
 
 
