@@ -1,144 +1,111 @@
 var pomodoroClock = {
-    // set variables
-    started: false,
-    minutes: 0,
-    seconds: 0,
-    sessionLength: 25,
-    sessionDOM: null,
-    breakLength: 5,
-    breakDOM: null,
-    fillerHeight: 0,
-    fillerIncrement: 0,
-    interval: null,
-    minutesDom: null,
-    secondsDom: null,
-    fillDom: null,
-    runs: 1,
-    
-  
-    // initialize variables, set event listeners, start interval counter function.
-    init: function() {
-      var self = this;
-  
-      this.minutesDom = document.querySelector("#minutes");
-      this.secondsDom = document.querySelector("#seconds");
-      this.fillDom = document.querySelector("#filler");
-      this.sessionDOM = document.querySelector("#session-time");
-      this.breakDOM = document.querySelector("#break-time");
-      this.interval = setInterval(function() {
-        self.intervalFunction.apply(self);
-      }, 1000);
-  
-      document.querySelector("#start").addEventListener("click", function() {
-        self.startCount.apply(self);
+  started: false,
+  minutes: 0,
+  seconds: 0,
+  sessionLength: 25,
+  breakLength: 5,
+  interval: null,
+  isBreak: false,
+
+  init: function() {
+      this.minutesDom = document.getElementById("minutes");
+      this.secondsDom = document.getElementById("seconds");
+      this.fillDom = document.getElementById("filler");
+      this.sessionDOM = document.getElementById("session-time");
+      this.breakDOM = document.getElementById("break-time");
+
+      this.updateUI();
+
+      document.getElementById("start").addEventListener("click", () => this.startCount());
+      document.getElementById("stop").addEventListener("click", () => this.stopCount());
+      document.querySelectorAll(".time-adjust").forEach(button => {
+          button.addEventListener("click", (event) => this.adjustTime(event));
       });
-      document.querySelector("#stop").addEventListener("click", function() {
-        self.stopCount.apply(self);
-      });
-      document.querySelectorAll(".time-adjust").forEach(function(e) {
-        e.addEventListener("click", function() {
-          if (this.id === "sesh-plus") {
-            self.sessionLength++;
-          }
-          if (this.id === "sesh-minus") {
-            self.sessionLength--;
-          }
-          if (this.id === "break-minus") {
-            self.breakLength--;
-          }
-          if (this.id === "break-plus") {
-            self.breakLength++;
-          }
-          self.adjustValue.apply(self);
-        });
-      });
-    },
-  
-    // functions for our program
-    resetVariables: function(mins, secs, started) {
+  },
+
+  resetVariables: function(mins, secs, started, isBreak) {
       this.minutes = mins;
       this.seconds = secs;
       this.started = started;
-      this.fillerIncrement = 200 / (this.minutes * 60);
+      this.isBreak = isBreak;
+      this.fillerIncrement = 100 / (mins * 60);
       this.fillerHeight = 0;
       this.updateUI();
-    },
-  
-    startCount: function() {
-      this.resetVariables(this.sessionLength, this.seconds, true);
-      this.startAudio.play();
-    },
-  
-    stopCount: function() {
-      this.resetVariables(0, 0, false);
-      this.updateUI();
-    },
-  // for the timer. runs every second
-    intervalFunction: function() {
-      if (!this.started) return false;
-      if (this.seconds == 0) {
-        if (this.minutes == 0) {
-          this.timerDone();
-          return;
-        }
-        this.seconds = 59;
-        this.minutes--;
+  },
+
+  startCount: function() {
+      if (this.started) return;
+      this.resetVariables(this.isBreak ? this.breakLength : this.sessionLength, 0, true, this.isBreak);
+      this.interval = setInterval(() => this.intervalFunction(), 1000);
+  },
+
+  stopCount: function() {
+      clearInterval(this.interval);
+      this.resetVariables(0, 0, false, false);
+      this.fillDom.style.width = '0%';
+  },
+
+  intervalFunction: function() {
+      if (!this.started) return;
+
+      if (this.seconds === 0) {
+          if (this.minutes === 0) {
+              this.timerDone();
+              return;
+          }
+          this.seconds = 59;
+          this.minutes--;
       } else {
-        this.seconds--;
+          this.seconds--;
       }
-      this.updateUI();
-    },
-  
-    numberFormat: function(num) {
-      if (num < 10) {
-        return "0" + parseInt(num, 10);
-      } else return num;
-    },
-  
-    timerDone: function() {
-      this.runs++;
-      this.endAudio.play();
-      if (this.runs === 2 || this.runs === 4) {
-        this.resetVariables(this.breakLength, 0, true);
-      } else if (this.runs === 3 || this.runs === 5) {
-        this.resetVariables(this.sessionLength, 0, true);
-      } else {
-        this.resetVariables(this.breakLength, 0, false);
-      }
-  
-      //  console.log(this.runs);
-    },
-  
-    updateUI: function() {
-      this.minutesDom.innerHTML = this.numberFormat(this.minutes);
-      this.secondsDom.innerHTML = this.numberFormat(this.seconds);
-      this.sessionDOM.innerHTML = this.sessionLength + " min";
-      this.breakDOM.innerHTML = this.breakLength + " min";
       this.fillerHeight += this.fillerIncrement;
-      if (this.started == true) {
-        this.fillDom.style.height = this.fillerHeight + "px";
+      this.updateUI();
+  },
+
+  adjustTime: function(event) {
+      if (event.target.id === "sesh-plus") {
+          this.sessionLength++;
+      } else if (event.target.id === "sesh-minus") {
+          this.sessionLength = Math.max(1, this.sessionLength - 1);
+      } else if (event.target.id === "break-plus") {
+          this.breakLength++;
+      } else if (event.target.id === "break-minus") {
+          this.breakLength = Math.max(1, this.breakLength - 1);
+      }
+      this.updateUI();
+  },
+
+  timerDone: function() {
+      clearInterval(this.interval);
+      this.started = false;
+      this.isBreak = !this.isBreak;
+      this.fillDom.style.width = '0%';
+      this.startCount();
+  },
+
+  updateUI: function() {
+      this.minutesDom.innerText = this.numberFormat(this.minutes);
+      this.secondsDom.innerText = this.numberFormat(this.seconds);
+      this.sessionDOM.innerText = this.sessionLength + " min";
+      this.breakDOM.innerText = this.breakLength + " min";
+      this.fillDom.style.width = this.fillerHeight + '%';
+
+      if (this.isBreak) {
+          document.querySelector(".clock-box").classList.add("break-active");
       } else {
-        this.fillDom.style.height = 0 + "px";
+          document.querySelector(".clock-box").classList.remove("break-active");
       }
-    },
-  
-    adjustValue: function() {
-      if (!this.sessionLength > 0) {
-        this.sessionLength = 1;
-      }
-      if (!this.breakLength > 0) {
-        this.breakLength = 1;
-      } else {
-        this.updateUI();
-      }
-  
-      // console.log(this.sessionLength);
-    }
-  };
-  
-  window.onload = function() {
-    pomodoroClock.init();
-  };
+  },
+
+  numberFormat: function(num) {
+      return num < 10 ? "0" + num : num;
+  }
+};
+
+window.onload = function() {
+  pomodoroClock.init();
+};
+
   function updateTime() {
     const now = new Date();
     const day = now.getDay(); // 0 (Sunday) to 6 (Saturday)
@@ -264,5 +231,49 @@ function updateAnnouncements() {
 }
 // Call the function to update the announcements on page load
 updateAnnouncements();
+
+
+function joinMeet() {
+    const meetCode = document.getElementById('gmeet-code').value.trim();
+    if (meetCode) {
+        window.open(`https://meet.google.com/${meetCode}`, '_blank');
+    } else {
+        alert('Please enter a valid Meet code.');
+    }
+}
+
+// Sample opportunities data (this can be replaced with actual data from a server)
+const opportunities = [
+  { description: "Create an in-house tool to replace a paid marketing tool." },
+  { description: "Automate repetitive tasks in the customer support team." },
+  { description: "Develop a dashboard for real-time analytics for the sales team." },
+];
+
+// Function to render the opportunity board
+function renderOpportunityBoard() {
+  const board = document.getElementById('opportunity-board');
+  board.innerHTML = ''; // Clear existing entries
+
+  opportunities.forEach((opportunity, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = opportunity.description;
+      board.appendChild(listItem);
+  });
+}
+
+// Function to submit a new opportunity
+function submitOpportunity() {
+  const description = document.getElementById('opportunity-description').value.trim();
+  if (description) {
+      opportunities.push({ description });
+      document.getElementById('opportunity-description').value = ''; // Clear input
+      renderOpportunityBoard(); // Update the board
+  } else {
+      alert('Please enter a description for the opportunity.');
+  }
+}
+
+// Initial render
+renderOpportunityBoard();
 
   

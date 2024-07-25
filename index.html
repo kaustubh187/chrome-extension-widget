@@ -24,6 +24,37 @@
                 </div>
             </div>
             <div class="widget">
+            <div class="pomodoro-container">
+                <h1>Pomodoro Timer</h1>
+                <div class="clock-box">
+                    <div class="clock-display">
+                        <div id="filler"></div>
+                        <div class="time-disp">
+                            <span id="minutes">00</span><span id="colon">:</span><span id="seconds">00</span>
+                        </div>
+                    </div>
+                    <div class="clock-controls">
+                        <div class="controls-left">
+                            <p>Session</p>
+                            <p id="session-time">25 min</p>
+                            <button id="sesh-minus" class="time-adjust">-</button>
+                            <button id="sesh-plus" class="time-adjust">+</button>
+                        </div>
+                        <div class="controls-right">
+                            <p>Break</p>
+                            <p id="break-time">5 min</p>
+                            <button id="break-minus" class="time-adjust">-</button>
+                            <button id="break-plus" class="time-adjust">+</button>
+                        </div>
+                    </div>
+                    <div class="start-reset">
+                        <button class="button" id="start">Start</button>
+                        <button class="button" id="stop">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="widget">
                 <h2>Today's Schedule</h2>
                 <div class="widget-content" style="height: 400px; overflow: hidden;">
                     <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata" width="800" height="800"></iframe>
@@ -32,14 +63,30 @@
             <div class="widget">
                 <h2>Join a Meeting</h2>
                 <div class="widget-content">
-                    <p><a href="https://meet.google.com/your-meet-link" target="_blank" class="button">Click here to join</a></p>
+                    <div class="meeting-option">
+                        <p><a href="https://meet.google.com/your-meet-link" target="_blank" class="button">Open Scheduled Meet</a></p>
+                    </div>
+                    <span style="align-items: center;">OR
+                    </span>
+                    <div class="meeting-code">
+                        <input type="text" id="gmeet-code" placeholder="Enter Meet Code" />
+                        <button class="button" onclick="joinMeet()">Join</button>
+                    </div>
                 </div>
             </div>
+            
             <div class="widget">
                 <h2>Google Keep Notes</h2>
                 <div class="widget-content">
                     <p><a href="https://keep.google.com/" target="_blank" class="button">Open Google Keep</a></p>
                 </div>
+            </div>
+            <div class="widget">
+            <div class="poll">
+                POLL
+                <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14105173.js"></script>
+                <noscript><a href="https://poll.fm/14105173">Movie Night on Friday?</a></noscript>
+              </div>
             </div>
         </aside>
         <section class="content">
@@ -86,26 +133,30 @@
                         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLTtid0c3x-EyJCXaugtsKdEhk5clapI01-VuFFzHJjl-8lT0jEg0wuh9PzrKkE4tTcYYKBjfQPoJ2/pubhtml?widget=true&amp;headers=false"></iframe>
                     </div>
                 </div>
+               
             </div>
             <div class="right-content">
                 <div class="user-info">
                     <!-- User Info -->
                     
+                    <div class="active-calories">
+                        <h1 style="font-size: 2.5em;margin-left: 13px;color:saddlebrown;">Google Slides</h1>
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
+                    </div>
+                    
+                    <div class="active-calories">
+                        <h1 style="font-size: 2.5em;margin-left: 13px;color:saddlebrown;">Google Slides</h1>
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
+                    </div>
+                    
                 </div>
-                <div class="active-calories">
-                    <h1 style="font-size: 2.5em;margin-left: 13px;color:rgb(113, 87, 69);text-align: center;">Google Slides</h1>
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
-                </div>
-                <div class="friends-activity">
-                    <h1 style="font-size: 2.2em;color: darkcyan;text-align: center;">Pomodoro Timer</h1>
-                    <div class="clock-box">
-                        <div class="clock-display">
-                            <div class="time-display">
-                                <span id="minutes">00</span>
-                                <span id="colon">:</span>
-                                <span id="seconds">00</span>
-                            </div>
-                            <div id="filler"></div>
+                <div class="user-info">
+                <div class="widget">
+                    <h1 style="font-size: 2em;color: rgb(36, 29, 252);">Opportunity Board</h1>
+                    <div class="widget-content">
+                        <div class="opportunity-form">
+                            <textarea id="opportunity-description" placeholder="Describe the opportunity or problem..."></textarea>
+                            <button class="button" onclick="submitOpportunity()">Submit</button>
                         </div>
                         <div class="clock-controls">
                             <div class="controls-left">
@@ -121,12 +172,17 @@
                                 <button id="break-plus" class="time-adjust">+</button>
                             </div>
                         </div>
-                        <div class="start-reset">
-                            <button class="button" id="start">Start</button>
-                            <button class="button" id="stop">Stop</button>
+                        <div class="opportunity-list">
+                            <h3>Current Opportunities</h3>
+                            <ul id="opportunity-board">
+                                <!-- Opportunities will be dynamically inserted here -->
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+                
+            
                 
                 <div class="mobile-personal-bests">
                     <h1 style="font-size: 2.2em;color:darkslateblue;text-align: center;">Google Form</h1>
