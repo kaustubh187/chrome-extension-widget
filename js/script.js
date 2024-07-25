@@ -189,7 +189,7 @@ function updateBookQuoteWidget() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const selectedQuote = quotes[randomIndex];
 
-  document.getElementById('book-title').innerText = "Title: " + selectedQuote.title;
+  document.getElementById('book-title').innerText = "Book: " + selectedQuote.title;
   document.getElementById('book-quote').innerText = selectedQuote.quote;
   document.getElementById('reader-info').innerText = "Read by: " + selectedQuote.reader;
 }
@@ -206,6 +206,7 @@ let tasks = [
   { task: "Exercise for 30 minutes", completed: false }
 ];
 
+
 function renderTasks() {
   const list = document.getElementById('dgc-list');
   list.innerHTML = ''; // Clear the list
@@ -213,7 +214,7 @@ function renderTasks() {
       const li = document.createElement('li');
       li.innerHTML = `
           <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${index})">
-          <span style="${task.completed ? 'text-decoration: line-through;' : ''}">${task.task}</span>
+          <span class="${task.completed ? 'completed' : ''}">${task.task}</span>
           <button onclick="removeTask(${index})">Remove</button>
       `;
       list.appendChild(li);
@@ -245,17 +246,22 @@ renderTasks();
 
 
 function updateAnnouncements() {
-  // This could be replaced with a fetch call to get dynamic content
   const announcements = [
-      "Welcome to the Daily Growth Checklist!\n",
-      "Check out our new features!\n",
-      "Stay updated with the latest announcements.\n"
+      "Welcome to the Daily Growth Checklist!",
+      "Check out our new features!",
+      "Stay updated with the latest announcements."
   ];
 
   const scrollingText = document.getElementById('scrolling-text');
-  scrollingText.innerText = announcements.join(" \u2022 "); // Use bullet points to separate messages
-}
+  scrollingText.innerHTML = ''; // Clear existing content
 
+  announcements.forEach(announcement => {
+      const div = document.createElement('div');
+      div.className = 'announcement';
+      div.textContent = announcement;
+      scrollingText.appendChild(div);
+  });
+}
 // Call the function to update the announcements on page load
 updateAnnouncements();
 

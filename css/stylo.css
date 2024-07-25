@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *,
 *::before,
 *::after {
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@ main {
   grid-template-columns: 20% 80%;
   width: 95%;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.748);
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -49,8 +49,8 @@ main {
 
 .sidebar .widget-content {
   background: #495057;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 .sidebar .button {
@@ -86,7 +86,6 @@ main {
 .weekly-schedule,
 .personal-bests,
 .user-info,
-.active-calories,
 .friends-activity,
 .mobile-personal-bests {
   background: #f6f7fb;
@@ -94,7 +93,13 @@ main {
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
+.active-calories{
+  background: #f6f7fb;
+  border-radius: 10px;
+  height: 430px;
+  margin-bottom: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 .activities h1,
 .weekly-schedule h1,
 .personal-bests h1,
@@ -107,7 +112,8 @@ main {
 }
 
 .activity-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
@@ -116,7 +122,7 @@ main {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  background: #e0e0e0;
+  background: #e0e0e000;
 }
 
 .image-container img,
@@ -126,19 +132,6 @@ iframe {
   border-radius: 10px;
 }
 
-.overlay {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .scrolling-container {
   overflow: hidden;
@@ -146,9 +139,24 @@ iframe {
 }
 
 .scrolling-text {
-  animation: scroll 10s linear infinite;
+  animation: scroll 20s linear infinite;
 }
-
+.announcement {
+  font-size: 20px; /* Set font size */
+  font-family: "Montserrat", sans-serif;
+  color: #0c0000; /* Set text color */
+  margin: 4px 0; /* Add margin between announcements */
+  border-radius: 5px; /* Optional: Add rounded corners */
+  padding-left: 20px;
+}
+.scrolling-text .announcement::before {
+  content: "\2022"; /* Unicode for bullet point */
+  position: absolute;
+  left: 5px;
+  color: #060505; /* Color for the bullet point */
+  font-size: 20px; /* Size for the bullet point */
+  line-height: 1; /* Ensure it aligns properly */
+}
 @keyframes scroll {
   0% {
     transform: translateY(0);
@@ -156,6 +164,47 @@ iframe {
   100% {
     transform: translateY(-100%);
   }
+}
+/* Style for the list items */
+#dgc-list li {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e9e6e6;
+  border: 5px solid #ddd;
+  border-radius: 9px;
+}
+
+/* Style for the checkbox */
+#dgc-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Style for the task text */
+#dgc-list li span {
+  flex-grow: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #181914;
+}
+
+/* Style for the remove button */
+#dgc-list li button {
+  background-color: #ff4d4d;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+/* Style for completed tasks */
+#dgc-list li span.completed {
+  text-decoration: line-through;
+  color: #888;
 }
 
 .book-info {
@@ -345,11 +394,12 @@ iframe {
 /* Poll */
 .mobile-personal-bests {
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 2px;
     border-radius: 10px;
+    height: 1200px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 200px;
+    width: 100%;
 }
 
 .mobile-personal-bests h1 {

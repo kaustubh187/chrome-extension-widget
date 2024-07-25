@@ -12,7 +12,7 @@
     <main>
         <aside class="sidebar">
             <div class="widget">
-                <h2>Current Time</h2>
+                <h2>Welcome</h2>
                 <div id="datetime-widget" class="widget-content">
                     <span id="time" class="time-display"></span>
                         <span id="date-info" class="date-display"></span>
@@ -25,8 +25,8 @@
             </div>
             <div class="widget">
                 <h2>Today's Schedule</h2>
-                <div class="widget-content">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata"></iframe>
+                <div class="widget-content" style="height: 400px; overflow: hidden;">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata" width="800" height="800"></iframe>
                 </div>
             </div>
             <div class="widget">
@@ -45,23 +45,19 @@
         <section class="content">
             <div class="left-content">
                 <div class="activities">
-                    <h1>Dashboard</h1>
-                    <div class="activity-container">
-                        <div class="img-five">
-                            <div class="image-container">
-                                <h3><i class="fas fa-music"></i> Spotify Music Player</h3>
-                                <iframe src="https://open.spotify.com/embed/playlist/6dSz0AWxkgBfhlNBFyzqFf"></iframe>
+                    <h1 style="font-size: 3em;color: salmon;">Dashboard</h1>
+                    <div class="activity-container" style="height: 520px;">
+                        <div class="img-five" style="width: 100%; height: 360px;">
+                            <div class="image-container" style="height: 100%;">
+                                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWTqYqGLu7kTX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>    
                             </div>
                         </div>
-                        <div class="img-six">
-                            <div class="image-container">
-                                <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+                        <div class="img-six" style="height: 150px;">
+                            <div class="image-container" style="height: 100%;">
+                                <h3 style="color: rgb(253, 35, 89); font-family: 'Montserrat';font-size: 2em;"><i class="fas fa-bullhorn"></i> Announcements</h3>
                                 <div class="scrolling-container">
                                     <div class="scrolling-text" id="scrolling-text">
-                                        <div class="announcement">Welcome to the Daily Growth Checklist! Check out our new features and stay updated with the latest announcements.</div>
-                                        <div class="announcement">New features released! Check out the updated dashboard for enhanced analytics.</div>
-                                        <div class="announcement">Reminder: Scheduled maintenance on Saturday from 1 AM to 3 AM. Please save your work.</div>
-                                        <div class="announcement">Our mobile app now supports dark mode. Update to the latest version to try it out!</div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -78,12 +74,16 @@
                         <button class="button" onclick="addTask()">Add Task</button>
                     </div>
                     <div class="personal-bests">
-                        <h1>Book + Quote</h1>
+                        <h1>Words of Wisdom</h1>
                         <div class="book-info">
-                            <h4 id="book-title">Title: </h4>
+                            <h4 id="book-title">Book: </h4>
                             <p id="book-quote"></p>
                             <p id="reader-info">Read by: </p>
                         </div>
+                    </div>
+                    <div class="active-calories">
+                        <h1>Excel Sheet</h1>
+                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLTtid0c3x-EyJCXaugtsKdEhk5clapI01-VuFFzHJjl-8lT0jEg0wuh9PzrKkE4tTcYYKBjfQPoJ2/pubhtml?widget=true&amp;headers=false"></iframe>
                     </div>
                 </div>
             </div>
@@ -93,11 +93,11 @@
                     
                 </div>
                 <div class="active-calories">
-                    <h1>Google Slides</h1>
+                    <h1 style="font-size: 2.5em;margin-left: 13px;color:saddlebrown;">Google Slides</h1>
                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTCnuuRFlTPLwFLcCjdtZv8OeDla0rylv1fDHilZVeFmnpPWgninQSD6aOKVe-EMmw0r8nylfyJ6RS3/embed?start=false&loop=true&delayms=60000"></iframe>
                 </div>
                 <div class="friends-activity">
-                    <h1>Timer</h1>
+                    <h1>Pomodro Timer</h1>
                     <div class="clock-box">
                         <div class="clock-display">
                             <div class="time-display">
@@ -127,11 +127,12 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="mobile-personal-bests">
-                    <h1>Poll</h1>
-                    <script type="text/javascript" charset="utf-8" src="https://secure.polldaddy.com/p/14105173.js"></script>
-                    <noscript><a href="https://poll.fm/14105173">Movie Night on Friday?</a></noscript>
+                    <h1>Google Form</h1>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem99nt2AQ1catikaVi_ugMjs3PUFuKxfAw73YznXtK1Cr_TQ/viewform?embedded=true" width="640" height="719" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
+                
             </div>
         </section>
     </main>
