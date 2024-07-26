@@ -252,6 +252,9 @@ const opportunities = [
   { description: "Automate repetitive tasks in the customer support team." },
   { description: "Develop a dashboard for real-time analytics for the sales team." },
 ];
+const notes = [
+  { description: "drink 8 glasses of water" }
+];
 
 // Function to render the opportunity board
 function renderOpportunityBoard() {
@@ -261,6 +264,16 @@ function renderOpportunityBoard() {
   opportunities.forEach((opportunity, index) => {
       const listItem = document.createElement('li');
       listItem.textContent = opportunity.description;
+      board.appendChild(listItem);
+  });
+}
+function renderNotes() {
+  const board = document.getElementById('notes-board');
+  board.innerHTML = ''; // Clear existing entries
+
+  notes.forEach((note, index) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = note.description;
       board.appendChild(listItem);
   });
 }
@@ -276,10 +289,20 @@ function submitOpportunity() {
       alert('Please enter a description for the opportunity.');
   }
 }
+function submitNotes() {
+  const description = document.getElementById('notes-description').value.trim();
+  if (description) {
+      notes.push({ description });
+      document.getElementById('notes-description').value = ''; // Clear input
+      renderOpportunityBoard(); // Update the board
+  } else {
+      alert('Please enter scribble notes.');
+  }
+}
 
 // Initial render
 renderOpportunityBoard();
-
+renderNotes();
 function toggleWidget(widgetId) {
   var widget = document.getElementById(widgetId);
   var content = widget.querySelector('.widget-content, .pomodoro-container, .activity-container, .weekly-schedule, .personal-bests, .active-calories, .user-info, .mobile-personal-bests');

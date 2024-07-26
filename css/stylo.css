@@ -150,7 +150,7 @@ main {
 .active-calories{
   background: #f6f7fbe7;
   border-radius: 10px;
-  height: 430px;
+  height: 373px;
   margin-bottom: 60px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -502,6 +502,20 @@ iframe {
   }
   
 }
+@keyframes float {
+  0% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-100px);
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
 .meeting-code input {
   width: 70%;
   padding: 10px;
@@ -633,6 +647,13 @@ iframe {
   font-size: large;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.floating-emoji {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 70px;
+  animation: float 2s ease-in-out infinite;
 }
 
 .controls-left, .controls-right {

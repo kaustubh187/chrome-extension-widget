@@ -3,7 +3,7 @@
     "name": "My Custom New Tab",
     "version": "1.0",
     "chrome_url_overrides": {
-      "newtab": "indo.html"
+      "newtab": "index.html"
     }
 }
   

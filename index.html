@@ -15,6 +15,7 @@
             <div class="widget" id="datetime-widget">
                 <button class="toggle-button" onclick="toggleWidget('datetime-widget')"><i class="fas fa-times"></i></button>
                 <h2>Welcome</h2>
+                <div class="floating-emoji">🎉</div>
                 <div class="widget-content">
                     <span id="time" class="time-display"></span>
                     <span id="date-info" class="date-display"></span>
@@ -133,8 +134,24 @@
                     </div>
                     <div class="active-calories" id="active-calories">
                         <button class="toggle-button" onclick="toggleWidget('active-calories')"><i class="fas fa-times"></i></button>
-                        <h1 style="font-size: 2.2em;color: darkcyan;text-align: center;">Excel Sheet</h1>
-                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTLTtid0c3x-EyJCXaugtsKdEhk5clapI01-VuFFzHJjl-8lT0jEg0wuh9PzrKkE4tTcYYKBjfQPoJ2/pubhtml?widget=true&amp;headers=false"></iframe>
+                        <h1 style="font-size: 2.2em;color: darkcyan;text-align: center;">Issue Tracker</h1>
+                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNqSs0QESj3lOaoG3eWwlpS88Fgh7qqnOeMQ3AHZhfJzqNaXB5c0RgOVgU3v35a0h5kDvVOGFC4JsE/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                    </div>
+                    <div class="user-info" id="opportunity-widget" style="margin-top: 90px;">
+                        <button class="toggle-button" onclick="toggleWidget('opportunity-widget')"><i class="fas fa-times"></i></button>
+                        <h1 style="font-size: 2em;color: rgb(76, 84, 0);text-align: center;">Scribble Notes</h1>
+                        <div class="widget-content">
+                            <div class="opportunity-form">
+                                <textarea id="notes-description" placeholder="What's on your mind?..."></textarea>
+                                <button class="button" onclick="submitNotes()">Submit</button>
+                            </div>
+                            <div class="opportunity-list">
+                                <h3 style="text-align: center;">Previous Notes</h3>
+                                <ul id="notes-board">
+                                    <!-- Opportunities will be dynamically added here -->
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,7 +182,7 @@
                 <div class="mobile-personal-bests" id="mobile-personal-bests">
                     <button class="toggle-button" onclick="toggleWidget('mobile-personal-bests')"><i class="fas fa-times"></i></button>
                     <h1 style="font-size: 2.2em;color:darkslateblue;text-align: center;">Google Form</h1>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem99nt2AQ1catikaVi_ugMjs3PUFuKxfAw73YznXtK1Cr_TQ/viewform?embedded=true" width="640" height="719" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSem99nt2AQ1catikaVi_ugMjs3PUFuKxfAw73YznXtK1Cr_TQ/viewform?embedded=true" width="640" height="660" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div>
             </div>
         </section>
